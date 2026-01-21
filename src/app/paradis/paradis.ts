@@ -24,23 +24,12 @@ export class ParadisClass implements AfterViewInit {
   constructor(public lang: LanguageService) {}
 
   places: ParadisePlace[] = [
-    {
-      key: 'bora-bora',
-      land: { de: 'Französisch-Polynesien', fr: 'Polynésie Française', en: 'French Polynesia' },
-      stadt: { de: 'Bora Bora', fr: 'Bora Bora', en: 'Bora Bora' },
-      image: 'https://images.unsplash.com/photo-1544551763-7707d57cb5f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
-      name: { de: 'Bora Bora', fr: 'Bora Bora', en: 'Bora Bora' },
-      desc: {
-        de: 'Das ultimative Postkartenmotiv. Eine türkisfarbene Lagune, umgeben von einem sanften Korallenriff und überdacht von einem erodierten Vulkan.',
-        fr: 'La carte postale ultime. Un lagon turquoise, ceinturé par un récif corallien et surmonté d’un volcan érodé.',
-        en: 'The ultimate postcard picture. A turquoise lagoon surrounded by a coral reef and topped by an eroded volcano.'
-      }
-    },
+
     {
       key: 'maldives',
       land: { de: 'Malediven', fr: 'Maldives', en: 'Maldives' },
       stadt: { de: 'Atoll Nord Malé', fr: 'Atoll de Malé Nord', en: 'North Malé Atoll' },
-      image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
+      image: 'https://lilybeachmaldives.com/wp-content/uploads/2017/09/aerial-2.jpg',
       name: { de: 'Malediven', fr: 'Maldives', en: 'Maldives' },
       desc: {
         de: 'Ein Archipel aus Staub und Traum. Tausende Inseln mit puderweißem Sand, die wie Perlen auf einem Smaragdmeer schweben.',
@@ -52,7 +41,7 @@ export class ParadisClass implements AfterViewInit {
       key: 'santorini',
       land: { de: 'Griechenland', fr: 'Grèce', en: 'Greece' },
       stadt: { de: 'Santorini', fr: 'Santorin', en: 'Santorini' },
-      image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
+      image: 'https://a.cdn-hotels.com/gdcs/production18/d1838/041ae6b1-0a88-4c22-a648-53a22dd4a006.jpg',
       name: { de: 'Santorini', fr: 'Santorin', en: 'Santorini' },
       desc: {
         de: 'Eine der dramatischten Kalderen der Welt. Weiße Zykladenhäuser klammern sich an schwarze Klippen über dem tiefblauen Ägäischen Meer.',
@@ -64,7 +53,7 @@ export class ParadisClass implements AfterViewInit {
       key: 'fjord-norway',
       land: { de: 'Norwegen', fr: 'Norvège', en: 'Norway' },
       stadt: { de: 'Sognefjord', fr: 'Sognefjord', en: 'Sognefjord' },
-      image: 'https://images.unsplash.com/photo-1522156373667-4c7234bbd804?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
+      image: 'https://assets.simpleviewcms.com/simpleview/image/upload/q_75/v1/clients/norway/naeroyfjorden_fjord_norway_2_1_001b9127-14ad-4b3d-99b6-29d8b3aae412.jpg',
       name: { de: 'Norwegische Fjorde', fr: 'Fjords Norvégiens', en: 'Norwegian Fjords' },
       desc: {
         de: 'Ein eiszeitliches Wunderwerk. Majestätische, von Wasserfällen durchzogene Fjorde, die sich zwischen schroffen Bergen tief ins Land schneiden.',
@@ -76,7 +65,7 @@ export class ParadisClass implements AfterViewInit {
       key: 'cappadocia',
       land: { de: 'Türkei', fr: 'Turquie', en: 'Turkey' },
       stadt: { de: 'Göreme', fr: 'Göreme', en: 'Göreme' },
-      image: 'https://images.unsplash.com/photo-1499602211854-122b55ef8f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
+      image: 'https://journeysremastered.com/wp-content/uploads/2017/11/Cappadocia.png',
       name: { de: 'Kappadokien', fr: 'Cappadoce', en: 'Cappadocia' },
       desc: {
         de: 'Eine surreale Mondlandschaft aus Tuffstein. Berühmt für seine "Feenkamine", unterirdischen Städte und das atemberaubende Spektakel hunderter Heißluftballons bei Sonnenaufgang.',
@@ -85,10 +74,22 @@ export class ParadisClass implements AfterViewInit {
       }
     },
     {
+      key: 'niagara-falls',
+      land: { de: 'Kanada / USA', fr: 'Canada / États-Unis', en: 'Canada / USA' },
+      stadt: { de: 'Niagara Falls', fr: 'Chutes du Niagara', en: 'Niagara Falls' },
+      image: 'https://th.bing.com/th/id/R.965153fddbcc64542e3f9c7ab1f89bfe?rik=lzgZVhNj2nrxrg&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f0%2f05%2fNiagara-Falls-Horseshoe-Falls-view.jpg&ehk=rthQyAY5rPngKplvkaiDakZzgt%2bK9%2bfxRt%2f2%2bGMJfa0%3d&risl=&pid=ImgRaw&r=0',
+      name: { de: 'Niagarafälle', fr: 'Chutes du Niagara', en: 'Niagara Falls' },
+      desc: {
+        de: 'Die tosende Kraft der Natur. Eine gewaltige Wassermenge stürzt donnernd in die Tiefe und erzeugt einen atemberaubenden Vorhang aus Gischt und Regenbögen an der Grenze zwischen zwei Nationen.',
+        fr: 'La puissance tonitruante de la nature. Un débit d’eau colossal se précipite avec fracas, créant un rideau vertigineux d’embruns et d’arcs-en-ciel à la frontière de deux nations.',
+        en: 'The thundering power of nature. A colossal volume of water plummets with a roar, creating a breathtaking curtain of mist and rainbows on the border between two nations.'
+      }
+    },
+    {
       key: 'banff-lake-louise',
       land: { de: 'Kanada', fr: 'Canada', en: 'Canada' },
       stadt: { de: 'Banff Nationalpark', fr: 'Parc national de Banff', en: 'Banff National Park' },
-      image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
+      image: 'https://banfflakelouise.bynder.com/m/3d04f19979f432ec/2000x1080_jpg-2022_MoraineLake_TravelAlberta_RothandRamberg%20(3).jpg',
       name: { de: 'Lake Louise, Banff', fr: 'Lac Louise, Banff', en: 'Lake Louise, Banff' },
       desc: {
         de: 'Ein Juwel der kanadischen Rocky Mountains. Ein Gletschersee von unglaublichem Türkis, gesäumt von schneebedeckten Gipfeln und gespiegelten in seiner stillen Oberfläche.',
@@ -100,7 +101,7 @@ export class ParadisClass implements AfterViewInit {
       key: 'iceland-jokulsarlon',
       land: { de: 'Island', fr: 'Islande', en: 'Iceland' },
       stadt: { de: 'Jökulsárlón', fr: 'Jökulsárlón', en: 'Jökulsárlón' },
-      image: 'https://images.unsplash.com/photo-1504893524553-b855bceeafe9?ixlib=rb-4.0.3&auto=format&fit=crop&w-2670&q=80',
+      image: 'https://guidetoiceland.is/image/179548/x/0/jokulsarlon-glacier-lagoon-see-the-crown-jewel-of-iceland-s-nature-1.jpg',
       name: { de: 'Jökulsárlón', fr: 'Jökulsárlón', en: 'Jökulsárlón' },
       desc: {
         de: 'Die Geburt von Eisbergen. Eine atemberaubende Gletscherlagune, in der sich eisblaue Eisberge vom Gletscher lösen und langsam dem Meer entgegentreiben.',
@@ -109,22 +110,22 @@ export class ParadisClass implements AfterViewInit {
       }
     },
     {
-      key: 'machu-picchu',
-      land: { de: 'Peru', fr: 'Pérou', en: 'Peru' },
-      stadt: { de: 'Cusco Region', fr: 'Région de Cusco', en: 'Cusco Region' },
-      image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
-      name: { de: 'Machu Picchu', fr: 'Machu Picchu', en: 'Machu Picchu' },
+      key: 'plitvice-lakes',
+      land: { de: 'Kroatien', fr: 'Croatie', en: 'Croatia' },
+      stadt: { de: 'Nationalpark Plitvicer Seen', fr: 'Parc national des lacs de Plitvice', en: 'Plitvice Lakes National Park' },
+      image: 'https://cdn.audleytravel.com/-/-/79/15975667-plitvice-lakes-national-park-croatia.jpg',
+      name: { de: 'Plitvicer Seen', fr: 'Lacs de Plitvice', en: 'Plitvice Lakes' },
       desc: {
-        de: 'Die Verlorene Stadt der Inka. Ein architektonisches Wunder, das auf einem felsigen Bergrücken thront und von Nebelwäldern und schroffen Andengipfeln umgeben ist.',
-        fr: "La Cité perdue des Incas. Une merveille d'architecture perchée sur une arête rocheuse, entourée de forêts de nuages et des sommets escarpés des Andes.",
-        en: 'The Lost City of the Incas. An architectural wonder perched on a rocky ridge, surrounded by cloud forests and the jagged peaks of the Andes.'
+        de: 'Ein Märchen aus Wasser und Wald. Sechzehn smaragdgrüne Seen, die durch ein Labyrinth von Wasserfällen und natürlichen Travertin-Barrieren auf magische Weise miteinander verbunden sind.',
+        fr: 'Un conte de fées d’eau et de forêt. Seize lacs d’émeraude reliés comme par magie par un dédale de cascades et de barrières naturelles de travertin.',
+        en: 'A fairy tale of water and forest. Sixteen emerald lakes magically interconnected by a labyrinth of waterfalls and natural travertine barriers.'
       }
     },
     {
       key: 'palawan',
       land: { de: 'Philippinen', fr: 'Philippines', en: 'Philippines' },
       stadt: { de: 'El Nido, Palawan', fr: 'El Nido, Palawan', en: 'El Nido, Palawan' },
-      image: 'https://images.unsplash.com/photo-1526951521990-620dc14c214b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
+      image: 'https://th.bing.com/th/id/R.274e521cd6598c259226f4fb7532eb69?rik=ZDnYMZ3PD61WoA&riu=http%3a%2f%2finspirationseek.com%2fwp-content%2fuploads%2f2014%2f11%2fPalawan-Island-Philippines-Photography.jpg&ehk=n0k1ZIoMdot2hwMw1QSzRKPKjwm5dKXJ6JPp%2bC4ATeY%3d&risl=&pid=ImgRaw&r=0',
       name: { de: 'El Nido, Palawan', fr: 'El Nido, Palawan', en: 'El Nido, Palawan' },
       desc: {
         de: 'Das letzte ökologische Grenzgebiet der Philippinen. Kalkstein-Karsts, die wie Drachenzähne aus smaragdgrünem Wasser ragen, versteckte Lagunen und unberührte Strände.',
@@ -136,7 +137,7 @@ export class ParadisClass implements AfterViewInit {
       key: 'swiss-alps-grindelwald',
       land: { de: 'Schweiz', fr: 'Suisse', en: 'Switzerland' },
       stadt: { de: 'Grindelwald', fr: 'Grindelwald', en: 'Grindelwald' },
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
+      image: 'https://s1.it.atcdn.net/wp-content/uploads/2015/11/shutterstock_279572969.jpg',
       name: { de: 'Grindelwald, Schweizer Alpen', fr: 'Grindelwald, Alpes Suisses', en: 'Grindelwald, Swiss Alps' },
       desc: {
         de: 'Das "Dorf der Gletscher". Ein idyllisches Tal, das von einigen der ikonischsten Gipfel der Alpen dominiert wird, ein Paradies für Naturliebhaber zu jeder Jahreszeit.',

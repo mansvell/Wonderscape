@@ -60,6 +60,18 @@ export class MonumentsClass implements AfterViewInit {
       }
     },
     {
+      key: 'cologne-cathedral',
+      land: { de: 'Deutschland', fr: 'Allemagne', en: 'Germany' },
+      stadt:  'Köln',
+      image: 'https://etichotels.com/journal/wp-content/uploads/2024/01/10-Things-To-Know-About-Cologne_Cathedral-ETIC-Hotels-scaled.jpg',
+      name: { de: 'Kölner Dom', fr: 'Cathédrale de Cologne', en: 'Cologne Cathedral' },
+      desc: {
+        de: 'Ein Meisterwerk der Hochgotik. Mit seinen filigranen Türmen, die himmelwärts streben, ist er ein Symbol deutscher Baukunst und UNESCO-Weltkulturerbe am Rhein.',
+        fr: 'Un chef-d’œuvre du gothique flamboyant. Avec ses flèches ciselées s’élançant vers le ciel, c’est un symbole de l’architecture allemande et un site du patrimoine mondial de l’UNESCO sur les rives du Rhin.',
+        en: 'A masterpiece of High Gothic architecture. With its twin spires reaching skyward, it is a symbol of German craftsmanship and a UNESCO World Heritage Site on the banks of the Rhine.'
+      }
+    },
+    {
       key: 'sydneyopera',
       land: { de:'Australia', fr:'Australie', en:'Australia' },
       stadt: 'Sydney',
