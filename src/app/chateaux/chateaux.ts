@@ -2,7 +2,7 @@ import {AfterViewInit, Component} from '@angular/core';
 import {Lang, LanguageService} from '../services/language.services';
 import {NgForOf, NgClass, NgIf} from '@angular/common';
 
-type Chateaux = {
+type Castle = {
   key:string;
   land:Record<Lang, string>;
   stadt:Record<Lang, string>;
@@ -22,114 +22,127 @@ export class ChateauxClass implements AfterViewInit{
 
   constructor(public lang : LanguageService) {}
 
-  chateaux: Chateaux[] = [
+  chateaux: Castle[] = [
+    {
+      key: 'neuschwanstein',
+      land: { de: 'Deutschland', fr: 'Allemagne', en: 'Germany' },
+      stadt: { de: 'Schwangau, Bayern', fr: 'Schwangau, Bavière', en: 'Schwangau, Bavaria' },
+      image: 'https://images5.alphacoders.com/129/thumb-1920-1298593.jpg',
+      name: { de: 'Schloss Neuschwanstein', fr: 'Château de Neuschwanstein', en: 'Neuschwanstein Castle' },
+      desc: {
+        de: 'Das Märchenschloss schlechthin. Auf einem zerklüfteten Felsen erbaut, inspirierte es Disney und verkörpert den romantischen Traum von König Ludwig II.',
+        fr: 'Le château de conte de fées par excellence. Juché sur un piton rocheux, il a inspiré Disney et incarne le rêve romantique du roi Louis II de Bavière.',
+        en: 'The quintessential fairy-tale castle. Perched on a rugged cliff, it inspired Disney and embodies the romantic dream of King Ludwig II.'
+      }
+    },
 
     {
-      key: 'burj-al-arab',
-      land: { de: 'Vereinigte Arabische Emirate', fr: 'Émirats Arabes Unis', en: 'United Arab Emirates' },
-      stadt: { de: 'Dubai', fr: 'Dubaï', en: 'Dubai' },
-      image: 'https://luxuriate.life/wp-content/uploads/2021/03/Burj-Al-Arab-Jumeirah-Aerial-at-Sunrise-1-1024x575.jpg',
-      name: { de: 'Burj Al Arab Jumeirah', fr: 'Burj Al Arab Jumeirah', en: 'Burj Al Arab Jumeirah' },
+      key: 'windsor-castle',
+      land: { de: 'England, UK', fr: 'Angleterre, Royaume-Uni', en: 'England, UK' },
+      stadt: { de: 'Windsor', fr: 'Windsor', en: 'Windsor' },
+      image: 'https://www.worldhistory.org/uploads/images/11555.jpg',
+      name: { de: 'Windsor Castle', fr: 'Château de Windsor', en: 'Windsor Castle' },
       desc: {
-        de: 'Die ultimative Ikone des Luxus. Diese segelförmige Silhouette ist ein Symbol für kühnen Opulenz, mit Suiten über zwei Etagen, einer Flotte von Rolls-Royce und einem höchst exklusiven Ambiente.',
-        fr: "L'icône ultime du luxe. Cette silhouette en forme de voile est un symbole d'audace et d'opulence, avec des suites sur deux niveaux, une flotte de Rolls-Royce et une ambiance résolument exclusive.",
-        en: 'The ultimate icon of luxury. This sail-shaped silhouette is a symbol of bold opulence, with two-story suites, a fleet of Rolls-Royces, and a fiercely exclusive ambiance.'
+        de: 'Die älteste und größte durchgehend bewohnte Burg der Welt. Eine offizielle Residenz der britischen Monarchie, reich an Geschichte, Staatsappartements und der St.-Georgs-Kapelle.',
+        fr: 'Le plus ancien et le plus grand château habité au monde. Une résidence officielle de la monarchie britannique, riche en histoire, en appartements d’État et la chapelle Saint-Georges.',
+        en: 'The oldest and largest inhabited castle in the world. An official residence of the British monarchy, rich in history, State Apartments, and St. George’s Chapel.'
       }
     },
     {
-      key: 'cheval-blanc-paris',
+      key: 'chambord',
       land: { de: 'Frankreich', fr: 'France', en: 'France' },
-      stadt: { de: 'Paris', fr: 'Paris', en: 'Paris' },
-      image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/3b/99/e3/la-samaritaine-building.jpg?w=1200&h=-1&s=1',
-      name: { de: 'Cheval Blanc Paris', fr: 'Cheval Blanc Paris', en: 'Cheval Blanc Paris' },
+      stadt: { de: 'Chambord, Loire-Tal', fr: 'Chambord, Vallée de la Loire', en: 'Chambord, Loire Valley' },
+      image: 'https://cdn1.chambord.org/en/wp-content/uploads/sites/3/2020/06/Chambord-Photo-Drone-of-visuals-3.jpg',
+      name: { de: 'Schloss Chambord', fr: 'Château de Chambord', en: 'Château de Chambord' },
       desc: {
-        de: 'Moderne Eleganz im Herzen von Paris. In einem renovierten historischen Gebäude vereint dieses Haus zeitgenössische Kunst, kulinarische Höchstleistungen und einen atemberaubenden Pool mit Blick auf die Seine.',
-        fr: "Élégance contemporaine au cœur de Paris. Dans un monument historique réinventé, cette maison allie art contemporain, excellence culinaire et une piscine spectaculaire face à la Seine.",
-        en: 'Contemporary elegance in the heart of Paris. Housed in a reinvented historic landmark, this mansion blends contemporary art, culinary excellence, and a stunning pool overlooking the Seine.'
+        de: 'Das Juwel der Renaissance im Loiretal. Berühmt für seine atemberaubende doppelläufige Wendeltreppe und seine skulpturale Dachlandschaft, ein Meisterwerk der französischen Architektur.',
+        fr: 'Le joyau de la Renaissance dans la Loire. Célèbre pour son spectaculaire escalier à double révolution et son toit en dentelle de pierre, un chef-d’œuvre de l’architecture française.',
+        en: 'The jewel of the Renaissance in the Loire Valley. Famous for its breathtaking double-helix staircase and sculptural rooftop skyline, a masterpiece of French architecture.'
       }
     },
     {
-      key: 'four-seasons-bora-bora',
-      land: { de: 'Französisch-Polynesien', fr: 'Polynésie Française', en: 'French Polynesia' },
-      stadt: { de: 'Bora Bora', fr: 'Bora Bora', en: 'Bora Bora' },
-      image: 'https://th.bing.com/th/id/R.53cfd4042f752ebe06a9d86e523b0bde?rik=NMUheu4PIpQ4fA&riu=http%3a%2f%2fcdn.architecturendesign.net%2fwp-content%2fuploads%2f2014%2f07%2fFour-Seasons-Resort-Bora-Bora-02.jpg&ehk=5EBvS%2fOJHwhKa6drwtfikim%2bNwn9cpqj8xOTrg2CU2g%3d&risl=&pid=ImgRaw&r=0',
-      name: { de: 'Four Seasons Resort Bora Bora', fr: 'Four Seasons Resort Bora Bora', en: 'Four Seasons Resort Bora Bora' },
-      desc: {
-        de: 'Das Paradies auf Stelzen. Legendäre Overwater-Bungalows mit Glasböden, türkisfarbener Lagune und einem Service, der jedes Bedürfnis vorausahnt. Die Definition des tropischen Traums.',
-        fr: 'Le paradis sur pilotis. Des bungalows sur l’eau légendaires avec plancher de verre, un lagon turquoise et un service aux petits soins. La définition du rêve tropical.',
-        en: 'Paradise on stilts. Legendary overwater bungalows with glass-floor panels, a turquoise lagoon, and service that anticipates every need. The definition of the tropical dream.'
-      }
-    },
-    {
-      key: 'crillon-paris',
+      key: 'versailles',
       land: { de: 'Frankreich', fr: 'France', en: 'France' },
-      stadt: { de: 'Paris', fr: 'Paris', en: 'Paris' },
-      image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2670&q=80',
-      name: { de: 'Hôtel de Crillon', fr: 'Hôtel de Crillon', en: 'Hôtel de Crillon' },
+      stadt: { de: 'Versailles', fr: 'Versailles', en: 'Versailles' },
+      image: 'https://images.bfmtv.com/Kdt2VS27Ugl77_P2TZhK3sY0BM0=/0x0:2568x1977/2568x0/images/Chateau-de-Versailles-192076.jpg',
+      name: { de: 'Schloss Versailles', fr: 'Château de Versailles', en: 'Palace of Versailles' },
       desc: {
-        de: 'Die Krönung der französischen Kunst des Gastgebens. Ein palastartiges Herrenhaus aus dem 18. Jahrhundert, das mit modernem Design neu interpretiert wurde. Luxus, Geschichte und perfekter Geschmack.',
-        fr: "Le summum de l'art de vivre à la française. Un palais du XVIIIe siècle réinterprété avec un design moderne. Luxe, histoire et goût parfait.",
-        en: 'The pinnacle of French art de vivre. An 18th-century palace mansion reinterpreted with modern design. Luxury, history, and perfect taste.'
+        de: 'Der Gipfel des absolutistischen Prunks. Ein Symbol der französischen Monarchie mit dem Spiegelsaal, den legendären Gärten und überwältigender barocker Architektur.',
+        fr: "L'apogée de la magnificence absolue. Symbole de la monarchie française avec la Galerie des Glaces, les jardins légendaires et une architecture baroque à couper le souffle.",
+        en: 'The pinnacle of absolutist splendor. A symbol of the French monarchy with the Hall of Mirrors, legendary gardens, and staggering Baroque architecture.'
       }
     },
     {
-      key: 'mandarin-oriental-bangkok',
-      land: { de: 'Thailand', fr: 'Thaïlande', en: 'Thailand' },
-      stadt: { de: 'Bangkok', fr: 'Bangkok', en: 'Bangkok' },
-      image: 'https://runbkk.net/wp-content/uploads/2019/03/mandarin-oriental-bangkok-photo85.jpg',
-      name: { de: 'Mandarin Oriental, Bangkok', fr: 'Mandarin Oriental, Bangkok', en: 'Mandarin Oriental, Bangkok' },
+      key: 'edinburgh-castle',
+      land: { de: 'Schottland, UK', fr: 'Écosse, Royaume-Uni', en: 'Scotland, UK' },
+      stadt: { de: 'Edinburgh', fr: 'Édimbourg', en: 'Edinburgh' },
+      image: 'https://th.bing.com/th/id/R.367ae246ac7f83c6dc11c1f0c3ae81c7?rik=%2bb4bRmYuEVOyGg&pid=ImgRaw&r=0',
+      name: { de: 'Edinburgh Castle', fr: 'Château d’Édimbourg', en: 'Edinburgh Castle' },
       desc: {
-        de: 'Die Wiege des legendären asiatischen Luxus. Am Ufer des Chao Phraya gelegen, verbindet dieses Kult-Hotel seit über 140 Jahren unübertroffenen Service, historischen Charme und zeitlose Eleganz.',
-        fr: "Le berceau du luxe asiatique légendaire. Sur les rives du Chao Phraya, cet hôtel culte allie depuis plus de 140 ans un service inégalé, un charme historique et une élégance intemporelle.",
-        en: 'The birthplace of legendary Asian luxury. On the banks of the Chao Phraya, this iconic hotel has blended unparalleled service, historic charm, and timeless elegance for over 140 years.'
+        de: 'Eine ikonische Festung auf einem erloschenen Vulkan. Sie beherrscht die Skyline der Stadt, beherbergt die schottischen Kronjuwelen und atmet jahrhundertelange Geschichte.',
+        fr: 'Une forteresse iconique sur un volcan éteint. Dominant la skyline de la ville, elle abrite les joyaux de la couronne écossaise et respire l’histoire des siècles.',
+        en: 'An iconic fortress atop an extinct volcano. Dominating the city skyline, it houses the Scottish Crown Jewels and breathes centuries of history.'
       }
     },
     {
-      key: 'the-ritz-london',
-      land: { de: 'Vereinigtes Königreich', fr: 'Royaume-Uni', en: 'United Kingdom' },
-      stadt: { de: 'London', fr: 'Londres', en: 'London' },
-      image: 'https://cdn.kiwicollection.com/media/property/PR003267/xl/003267-06-exterior-view-evening-street.jpg',
-      name: { de: 'The Ritz London', fr: 'The Ritz London', en: 'The Ritz London' },
+      key: 'himeji-castle',
+      land: { de: 'Japan', fr: 'Japon', en: 'Japan' },
+      stadt: { de: 'Himeji', fr: 'Himeji', en: 'Himeji' },
+      image: 'https://th.bing.com/th/id/R.4f89b1c3cc5986018a142b7276c3eb1f?rik=Os4Itb7iMPiXZg&pid=ImgRaw&r=0',
+      name: { de: 'Burg Himeji', fr: 'Château de Himeji', en: 'Himeji Castle' },
       desc: {
-        de: 'Das Maß aller Dinge für britischen Stil. Mit seinem berühmten Palm Court für den Afternoon Tea und dem opulenten, aber gemütlichen Interieur ist es ein Symbol für unverwechselbare Eleganz und Tradition.',
-        fr: "La référence absolue du style britannique. Avec son célèbre Palm Court pour le thé de l'après-midi et ses intérieurs somptueux mais chaleureux, c'est un symbole d'élégance et de tradition.",
-        en: 'The gold standard of British style. With its famous Palm Court for afternoon tea and its opulent yet cozy interiors, it is a symbol of unmistakable elegance and tradition.'
+        de: 'Der "Weiße Reiher". Das schönste erhaltene Beispiel japanischer Schlossarchitektur mit eleganten, sich verjüngenden Dächern und einem komplexen Verteidigungssystem.',
+        fr: 'Le "Héron Blanc". Le plus beau spécimen préservé de l’architecture des châteaux japonais, aux toits élégants et effilés et au système défensif complexe.',
+        en: 'The "White Heron." The finest surviving example of Japanese castle architecture, with elegant, sloping roofs and a complex defensive system.'
       }
     },
     {
-      key: 'singita-lodges',
-      land: { de: 'Südafrika', fr: 'Afrique du Sud', en: 'South Africa' },
-      stadt: { de: 'Sabi Sand', fr: 'Sabi Sand', en: 'Sabi Sand' },
-      image: 'https://th.bing.com/th/id/R.617ac8a0eb283fe5c53b9ef61b006025?rik=oFk%2ft%2fcIoreXNA&riu=http%3a%2f%2fcdn.luxatic.com%2fwp-content%2fuploads%2f2011%2f12%2fSingita-Boulders-Lodge-South-Africa-1.jpg&ehk=lVO5kbNihdHoSuObjEPiBme0XHN%2fr5IpwpceKhLAsvE%3d&risl=&pid=ImgRaw&r=0',
-      name: { de: 'Singita Sabi Sand', fr: 'Singita Sabi Sand', en: 'Singita Sabi Sand' },
+      key: 'prague-castle',
+      land: { de: 'Tschechien', fr: 'République Tchèque', en: 'Czech Republic' },
+      stadt: { de: 'Prag', fr: 'Prague', en: 'Prague' },
+      image: 'https://th.bing.com/th/id/R.c34bbe8bfafc3b2c14f07dd1199b3405?rik=kaiHT8rk%2fKGHzA&riu=http%3a%2f%2fhopa.am%2fuploads%2fimages%2ftours%2fslider%2f436266_Prg-Praj3.jpg&ehk=df4UAfyAtMxz6hgv%2fnCm09ZN0A9%2bDYMOgfDP43jE%2f%2fk%3d&risl=1&pid=ImgRaw&r=0',
+      name: { de: 'Prager Burg', fr: 'Château de Prague', en: 'Prague Castle' },
       desc: {
-        de: 'Chic in der Wildnis. Mehr als ein Hotel: eine ultra-exklusive Lodge in einem privaten Wildreservat. Unvergleichliche Safari-Erlebnisse, atemberaubendes Design und ein tiefes Engagement für den Naturschutz.',
-        fr: 'Chic sauvage. Plus qu’un hôtel : un lodge ultra-exclusif au cœur d’une réserve privée. Expérience safari inégalée, design époustouflant et engagement profond pour la conservation.',
-        en: 'Chic in the wild. More than a hotel: an ultra-exclusive lodge in a private game reserve. Unparalleled safari experiences, breathtaking design, and a deep commitment to conservation.'
+        de: 'Der größte alte Burgkomplex der Welt. Eine Stadt in der Stadt, die über der Moldau thront und die gotische St.-Veits-Kathedrale sowie das malerische Goldene Gässchen beherbergt.',
+        fr: 'Le plus grand ancien complexe de châteaux au monde. Une ville dans la ville, surplombant la Vltava et abritant la cathédrale gothique Saint-Guy et la pittoresque Ruelle d’Or.',
+        en: 'The largest ancient castle complex in the world. A city within a city, overlooking the Vltava River and housing the Gothic St. Vitus Cathedral and the picturesque Golden Lane.'
+      }
+    },
+
+    {
+      key: 'boldt-castle',
+      land: { de: 'USA', fr: 'États-Unis', en: 'USA' },
+      stadt: { de: 'Alexandria Bay, New York', fr: 'Alexandria Bay, New York', en: 'Alexandria Bay, New York' },
+      image: 'https://allthatsinteresting.com/wordpress/wp-content/uploads/2021/04/aerial-boldt-castle-dawn-island.jpg',
+      name: { de: 'Boldt Castle', fr: 'Château Boldt', en: 'Boldt Castle' },
+      desc: {
+        de: 'Ein Märchenschloss aus Liebe und Tragik. Auf einer eigenen Insel im Saint-Lorenz-Strom gelegen, wurde es als Liebesbeweis erbaut, aber nie vollendet – eine romantische Ruine.',
+        fr: 'Un château de conte né d’un amour tragique. Situé sur sa propre île dans le fleuve Saint-Laurent, il fut construit comme preuve d’amour mais jamais achevé – une ruine romantique.',
+        en: 'A storybook castle born of love and tragedy. Located on its own island in the Saint Lawrence River, it was built as a testament of love but never finished – a romantic ruin.'
       }
     },
     {
-      key: 'orient-express',
-      land: { de: 'Europa', fr: 'Europe', en: 'Europe' },
-      stadt: { de: 'Bord des Zuges', fr: 'À bord du train', en: 'Onboard the Train' },
-      image: 'https://www.findingtheuniverse.com/wp-content/uploads/2017/01/Venice-Simplon-Orient-Express-50.jpg',
-      name: { de: 'Venice Simplon-Orient-Express', fr: 'Venice Simplon-Orient-Express', en: 'Venice Simplon-Orient-Express' },
+      key: 'corvin-castle',
+      land: { de: 'Rumänien', fr: 'Roumanie', en: 'Romania' },
+      stadt: { de: 'Hunedoara', fr: 'Hunedoara', en: 'Hunedoara' },
+      image: 'https://www.romaniatourism.com/images/castles-fortresses/corvinesti-castle-hunedoara4.jpg',
+      name: { de: 'Burg Hunedoara (Corvin)', fr: 'Château de Corvin', en: 'Corvin Castle' },
       desc: {
-        de: 'Ein fahrender Palast. Reisen Sie in die glorreichen Tage des Zugverkehrs in restaurierten Art-Déco-Waggons. Intime Kabinen, Gourmetküche und eine unvergessliche Reise durch die Landschaften Europas.',
-        fr: 'Un palace roulant. Revivez l’âge d’or du voyage en train dans des wagons Art Déco restaurés. Cabines intimes, cuisine gastronomique et un voyage inoubliable à travers l’Europe.',
-        en: 'A rolling palace. Step back into the golden age of train travel in restored Art Deco carriages. Intimate cabins, gourmet cuisine, and an unforgettable journey through Europe’s landscapes.'
+        de: 'Ein gotisch-renaissance Juwel in Transsilvanien. Mit seiner massiven Zugbrücke, hohen Türmen und düsteren Atmosphäre ist es einer der beeindruckendsten und authentischsten Schlösser Europas.',
+        fr: 'Un joyau gothico-Renaissance en Transylvanie. Avec son pont-levis massif, ses hautes tours et son atmosphère austère, c’est l’un des châteaux les plus impressionnants et authentiques d’Europe.',
+        en: 'A Gothic-Renaissance jewel in Transylvania. With its massive drawbridge, tall towers, and somber atmosphere, it is one of the most impressive and authentic castles in Europe.'
       }
     },
     {
-      key: 'ubud-hanging-gardens',
-      land: { de: 'Indonesien', fr: 'Indonésie', en: 'Indonesia' },
-      stadt: { de: 'Ubud, Bali', fr: 'Ubud, Bali', en: 'Ubud, Bali' },
-      image: 'https://www.piscicolor.com/images/blog/UbudHangingGardens/1090947.jpg',
-      name: { de: 'Ubud Hanging Gardens', fr: 'Ubud Hanging Gardens', en: 'Ubud Hanging Gardens' },
+      key: 'alhambra',
+      land: { de: 'Spanien', fr: 'Espagne', en: 'Spain' },
+      stadt: { de: 'Granada', fr: 'Grenade', en: 'Granada' },
+      image: 'https://cdn-imgix.headout.com/media/images/58da77effa54b9c430bbabfd2a54f135-Alhambra%20Granada.jpeg',
+      name: { de: 'Alhambra', fr: 'Alhambra', en: 'Alhambra' },
       desc: {
-        de: 'Architektonisches Meisterwerk im Dschungel. Berühmt für seinen atemberaubenden mehrstufigen Infinity-Pool, der sich über das grüne Tal erstreuft. Pure Stille und spirituelle Harmonie.',
-        fr: "Chef-d'œuvre architectural dans la jungle. Célèbre pour sa piscine à débordement spectaculaire à plusieurs niveaux qui épouse la vallée verte. Silence absolu et harmonie spirituelle.",
-        en: 'Architectural masterpiece in the jungle. Famous for its breathtaking multi-tiered infinity pool that drapes over the green valley. Pure serenity and spiritual harmony.'
+        de: 'Ein Juwel maurischer Architektur. Ein Fest aus filigranen Stuckarbeiten, kunstvollen Mosaiken, friedvollen Innenhöfen und üppigen Gärten mit Blick auf die Sierra Nevada.',
+        fr: 'Un joyau d’architecture mauresque. Une fête de stucs délicats, de mosaïques complexes, de patios paisibles et de jardins luxuriants surplombant la Sierra Nevada.',
+        en: 'A jewel of Moorish architecture. A feast of delicate stucco, intricate mosaics, peaceful courtyards, and lush gardens overlooking the Sierra Nevada.'
       }
     }
   ];
