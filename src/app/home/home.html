@@ -1,5 +1,5 @@
-<section class="relative min-h-[calc(100vh-65px)] overflow-hidden bg-slate-950 text-white">
-  <!-- Background image -->
+<section class="relative  overflow-hidden  text-white">
+
   <img
     class="absolute inset-0 h-full w-full object-cover opacity-70"
     src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2400&q=80"
@@ -7,53 +7,62 @@
   />
   <div class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-950/45 to-slate-950/80"></div>
 
-  <!-- Center content -->
   <div class="relative z-10 mx-auto flex min-h-[calc(100vh-65px)] max-w-7xl items-center px-6">
-    <div class="mx-auto w-full max-w-3xl text-center">
-      <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/15 backdrop-blur">
-        <span class="h-2 w-2 rounded-full bg-sky-300"></span>
-        <span class="text-sm text-white/80">Monuments • Hotels • Paradies • Weltwunder • Schlösser</span>
-      </div>
+    <div class="mx-auto w-full max-w-5xl text-center">
 
-      <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight">
-        Entdecke die Welt<br class="hidden sm:block" />
-        in <span class="text-sky-300">Premium</span>-Qualität
+
+      <h1 class="mt-6 text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight">
+        {{lang.t( {
+        de: 'Entdecke alles, was die Welt an',
+        fr: 'Découvrez ce que le monde a',
+        en: 'Discover all the beauty the world '
+        }) }}
+        <span class="text-sky-300">
+          {{lang.t( {
+          de: 'Schönem zu bieten hat',
+          fr: 'de plus beaux à offrir',
+          en: 'has to offer'
+        }) }}</span>
       </h1>
 
       <p class="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed">
-        Eine visuelle Kollektion: ikonische Orte, paradiesische Landschaften und Weltwunder.
+        {{ lang.t({
+        de: 'Eine visuelle Kollektion: ikonische Orte, paradiesische Landschaften und Weltwunder.',
+        fr: 'Une collection visuelle : lieux iconiques, paysages paradisiaques et merveilles du monde.',
+        en: 'A visual collection: iconic places, paradise landscapes, and world wonders.'
+      }) }}
       </p>
 
-      <!-- Buttons (remplacent la nav du header) -->
-      <div class="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div class="mt-30 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <a routerLink="/monuments"
-           class="rounded-2xl bg-white/12 px-6 py-4 text-sm font-semibold text-white/90 ring-1 ring-white/15 backdrop-blur hover:bg-white/18 transition">
-          Berühmte Monumente (10)
+           class="rounded-2xl bg-white/12 px-4 py-2 text-sm font-semibold text-white/90 ring-1 ring-white/15 backdrop-blur hover:bg-white/18 transition">
+          {{ lang.t({ de: 'Berühmte Monumente (10)', fr: 'Monuments célèbres (10)', en: 'Famous monuments (10)' }) }}
         </a>
 
         <a routerLink="/hotels"
            class="rounded-2xl bg-white/8 px-6 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
-          Ikonische Hotels (10)
+          {{ lang.t({ de: 'Ikonische Hotels (10)', fr: 'Hôtels iconiques (10)', en: 'Iconic Hotels (10)' }) }}
         </a>
 
         <a routerLink="/paradis"
-           class="rounded-2xl bg-white/8 px-6 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
-          Paradiesische Orte (10)
+           class="rounded-2xl bg-white/8 px-4 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
+          {{ lang.t({ de: 'Paradiesische Orte (10)', fr: 'Lieux paradisiaques(10)', en: 'Paradisiacal places (10)' }) }}
         </a>
 
         <a routerLink="/new7"
-           class="rounded-2xl bg-white/8 px-6 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
-          Neue 7 Weltwunder
+           class="rounded-2xl bg-white/8 px-4 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
+          {{ lang.t({ de: 'Neue 7 Weltwunder ', fr: '7 nouvelles merveilles du monde ', en: 'New 7 Wonders of the World' }) }}
         </a>
 
         <a routerLink="/old7"
-           class="rounded-2xl bg-white/8 px-6 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
-          Alte 7 Weltwunder
+           class="rounded-2xl bg-white/8 px-4 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
+          {{ lang.t({ de: 'Alte 7 Weltwunder ', fr: '7 anciennes merveilles du monde ', en: 'old 7 Wonders of the World' }) }}
         </a>
 
         <a routerLink="/chateaux"
-           class="rounded-2xl bg-white/8 px-6 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
-          Schönste Schlösser (10)
+           class="rounded-2xl bg-white/8 px-4 py-4 text-sm font-semibold text-white/80 ring-1 ring-white/10 backdrop-blur hover:bg-white/12 transition">
+          {{ lang.t({ de: 'Schönste Schlösser (10)', fr: 'Plus beaux châteaux (10)', en: 'Most beautiful castles (10)' }) }}
+
         </a>
       </div>
     </div>

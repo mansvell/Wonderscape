@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './chateaux.html',
   styleUrl: './chateaux.css',
+  standalone: true
 })
-export class Chateaux {
+export class ChateauxClass {
 
 }

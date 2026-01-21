@@ -1,26 +1,34 @@
-<header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-    <!-- Logo -->
-    <a routerLink="/" class="flex items-center gap-3">
+<header class="sticky top-0 z-50 border-b  bg-slate-950/70 backdrop-blur">
+  <div class="mx-auto flex max-w-8xl items-center justify-between px-6 ">
+    <a routerLink="/" class="">
       <img
-        src="assets/logo-wonderscape-mnk.png"
+        src="/assets/logo.png"
         alt="Wonderscape MNK"
-        class="h-10 w-10 rounded-2xl bg-white/5 object-contain p-1 ring-1 ring-white/15"
+        class="h-25 w-25  object-contain  "
       />
-      <div class="leading-tight">
-        <div class="text-sm font-extrabold tracking-wide text-white">
-          Wonderscape<span class="text-sky-300">.</span>
-        </div>
-        <div class="text-[11px] text-white/55">MNK</div>
-      </div>
     </a>
 
-    <!-- Lang -->
     <div class="flex items-center gap-2 rounded-2xl bg-white/10 p-1 ring-1 ring-white/15 backdrop-blur">
-      <!-- DE = défaut -->
-      <button class="rounded-xl bg-white/15 px-3 py-2 text-xs font-semibold text-white ring-1 ring-white/10">DE</button>
-      <button class="rounded-xl px-3 py-2 text-xs font-semibold text-white/70 hover:bg-white/10 hover:text-white">FR</button>
-      <button class="rounded-xl px-3 py-2 text-xs font-semibold text-white/70 hover:bg-white/10 hover:text-white">EN</button>
+      <button (click)="setLang('de')"
+              class="rounded-xl px-3 py-2 text-xs font-semibold ring-1 ring-white/10"
+              [class.bg-white]="lang.lang==='de'" [class.text-white]="lang.lang==='de'"
+      [class.text-white]="lang.lang!=='de'" >
+      DE
+      </button>
+
+      <button (click)="setLang('fr')"
+              class="rounded-xl px-3 py-2 text-xs font-semibold ring-1 ring-white/10"
+              [class.bg-white]="lang.lang==='fr'" [class.text-white]="lang.lang==='fr'"
+      [class.text-white]="lang.lang!=='fr'" >
+      FR
+      </button>
+
+      <button (click)="setLang('en')"
+              class="rounded-xl px-3 py-2 text-xs font-semibold ring-1 ring-white/10"
+              [class.bg-white]="lang.lang==='en'" [class.text-white]="lang.lang==='en'"
+      [class.text-white]="lang.lang!=='en'" >
+      EN
+      </button>
     </div>
   </div>
 </header>
