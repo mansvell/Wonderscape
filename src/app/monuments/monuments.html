@@ -7,7 +7,6 @@
     <div class="absolute inset-0 ws-stars opacity-[0.18]"></div>
   </div>
 
-  <!-- HERO -->
   <header class="relative mx-auto max-w-6xl px-6 pt-12 pb-7 text-center">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-extrabold tracking-tight">
       {{ lang.t({
@@ -30,7 +29,7 @@
   </header>
 
   <!-- LIST -->
-  <main class="relative mx-auto max-w-6xl px-6 pb-20">
+  <main class="relative mx-auto max-w-7xl px-6 pb-20">
     <article *ngFor="let m of monuments; let i = index"
              data-reveal
              class="reveal">
@@ -78,9 +77,8 @@
             </p>
 
             <div class="mt-6 flex flex-wrap gap-3">
-              <span class="rounded-full bg-sky-500/30 px-4 py-2 text-sm ring-1 ring-white/10">Architecture</span>
-              <span class="rounded-full bg-teal-500/30 px-4 py-2 text-sm ring-1 ring-white/10">Culture</span>
-              <span class="rounded-full bg-emerald-500/30 px-4 py-2 text-sm ring-1 ring-white/10">Iconic</span>
+              <span class="rounded-full bg-sky-500/30 px-4 py-2 text-sm ring-1 ring-white/10">{{ m.land[lang.lang] }}</span>
+              <span class="rounded-full bg-teal-500/30 px-4 py-2 text-sm ring-1 ring-white/10">{{ m.stadt }}</span>
             </div>
           </div>
 

@@ -19,9 +19,9 @@
 
     <p class="mt-4 text-white/70 text-base sm:text-lg">
       {{ lang.t({
-      de:'Luxus, Architektur und Legenden — im selben Poster-Look wie die Wonders.',
-      fr:'Luxe, architecture et légendes — dans le même rendu “poster”.',
-      en:'Luxury, architecture, and legends — in the same “poster” look.'
+      de:'Die 10 schicksten Hotels der Welt, die Tradition, absoluten Luxus, einzigartige Erlebnisse und unvergleichlichen Service vereinen (in alphabetischer Reihenfolge)',
+      fr:'les 10 des hôtels les plus chic au monde, alliant patrimoine, luxe absolu, expérience unique et service inégalé (par ordre alphabétique)',
+      en:'The 10 most chic hotels in the world, combining heritage, absolute luxury, unique experiences, and unparalleled service (in alphabetical order)'
     }) }}
     </p>
 
@@ -29,7 +29,6 @@
                 shadow-[0_0_22px_rgba(34,197,94,.25)]"></div>
   </header>
 
-  <!-- LIST -->
   <main class="relative mx-auto max-w-6xl px-6 pb-20">
     <article *ngFor="let h of hotels; let i = index"
              data-reveal
@@ -42,7 +41,6 @@
       <div class="overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur
                   shadow-[0_18px_55px_rgba(0,0,0,.40)]">
 
-        <!-- alternance EXACT: impairs => image à droite -->
         <div class="flex flex-col lg:flex-row"
              [ngClass]="{ 'lg:flex-row-reverse': i % 2 === 1 }">
 
@@ -82,13 +80,10 @@
             <!-- pills (comme la photo) -->
             <div class="mt-6 flex flex-wrap gap-3">
               <span class="rounded-full bg-sky-500/30 px-4 py-2 text-sm ring-1 ring-white/10 backdrop-blur">
-                Architecture
+                {{ h.land[lang.lang] }}
               </span>
               <span class="rounded-full bg-teal-500/30 px-4 py-2 text-sm ring-1 ring-white/10 backdrop-blur">
-                Luxury
-              </span>
-              <span class="rounded-full bg-emerald-500/30 px-4 py-2 text-sm ring-1 ring-white/10 backdrop-blur">
-                Iconic
+               {{ h.stadt[lang.lang] }}
               </span>
             </div>
           </div>
