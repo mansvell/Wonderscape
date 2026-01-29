@@ -1,5 +1,5 @@
 import {AfterViewInit, Component} from '@angular/core';
-import {NgClass, NgFor, NgForOf, NgIf, NgStyle} from '@angular/common';
+import {NgClass, NgFor, NgForOf, NgIf} from '@angular/common';
 import { LanguageService, Lang } from '../services/language.services';
 
 type Wonder = {
@@ -17,7 +17,6 @@ type Wonder = {
   imports: [
     NgForOf,
     NgClass,
-    NgStyle,
     NgIf
   ],
   templateUrl: './new7.html',
