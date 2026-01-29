@@ -1,0 +1,69 @@
+<!-- Robot button (visible sur Home, ou partout si tu l'inclus globalement) -->
+<button
+  class="fixed bottom-6 right-6 z-[60] h-14 w-14 rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur
+         shadow-[0_18px_55px_rgba(0,0,0,.35)] hover:bg-white/15 transition flex items-center justify-center"
+  (click)="toggle()"
+  aria-label="Open AI Guide"
+>
+  <!-- robot icon -->
+  <span class="text-2xl">🤖</span>
+</button>
+
+<!-- Overlay + chat window -->
+<div *ngIf="open" class="fixed inset-0 z-[70]">
+  <!-- click outside to close (home stays visible behind) -->
+  <div class="absolute inset-0 bg-black/35 backdrop-blur-[2px]" (click)="close()"></div>
+
+  <!-- Chat box -->
+  <div class="absolute bottom-6 right-6 w-[92vw] max-w-[380px] overflow-hidden rounded-2xl
+              bg-slate-950/80 ring-1 ring-white/15 backdrop-blur
+              shadow-[0_24px_70px_rgba(0,0,0,.55)]">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-4 py-3 bg-white/5">
+      <div class="flex items-center gap-2">
+        <div class="h-2 w-10 rounded-full bg-gradient-to-r from-sky-400/80 to-emerald-300/70"></div>
+        <div class="font-semibold text-white/90">Wonderscape Guide</div>
+      </div>
+      <button class="text-white/70 hover:text-white" (click)="close()">✕</button>
+    </div>
+
+    <!-- Messages -->
+    <div class="max-h-[420px] overflow-auto px-4 py-3 space-y-3">
+      <div class="text-xs text-white/50">
+        Pose une question sur n’importe quel lieu/monument du monde.
+      </div>
+
+      <div *ngFor="let m of ai.history" class="flex"
+           [class.justify-end]="m.role === 'user'">
+        <div
+          class="max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed ring-1 ring-white/10"
+          [class.bg-sky-500]="m.role === 'user'"
+        [class.bg-white]="m.role === 'assistant'"
+        >
+        {{ m.content }}
+      </div>
+    </div>
+
+    <div *ngIf="error" class="text-xs text-red-300">{{ error }}</div>
+  </div>
+
+  <!-- Input -->
+  <div class="p-3 border-t border-white/10 flex gap-2">
+    <input
+      class="flex-1 rounded-xl bg-white/5 ring-1 ring-white/10 px-3 py-2 text-sm text-white placeholder:text-white/40
+               focus:outline-none focus:ring-2 focus:ring-emerald-300/40"
+      [(ngModel)]="input"
+      (keydown.enter)="send()"
+      placeholder="Ex: Taj Mahal, Angkor, Grand Canyon…"
+    />
+    <button
+      class="rounded-xl px-4 py-2 text-sm font-semibold bg-emerald-400/20 ring-1 ring-emerald-300/30
+               hover:bg-emerald-400/25 disabled:opacity-50"
+      [disabled]="loading"
+      (click)="send()"
+    >
+      {{ loading ? '…' : 'Send' }}
+    </button>
+  </div>
+</div>
+</div>
