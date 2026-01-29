@@ -3,7 +3,7 @@ import OpenAI from "openai";
 
 export const config = { runtime: "nodejs" };
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const client = new OpenAI({ apiKey: process.env['OPENAI_API_KEY']});
 
 type Role = "user" | "assistant";
 type Msg = { role: Role; content: string };
@@ -40,7 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const message = safeString(body.message, 1200);
     if (!message) return res.status(400).json({ error: "Missing message" });
 
-    // ✅ On valide/normalise history pour éviter role: string
+    //  On valide/normalise history pour éviter role: string
     const historyRaw = Array.isArray(body.history) ? body.history : [];
     const history: Msg[] = historyRaw
       .filter((m: any) => m && (m.role === "user" || m.role === "assistant"))
@@ -62,7 +62,7 @@ Style:
 - avoid emojis
 `.trim();
 
-    // ✅ Transcript string => types stables sur toutes versions
+    // Transcript string => types stables sur toutes versions
     const input = buildTranscript(system, history, message);
 
     const response = await client.responses.create({
